@@ -1,9 +1,8 @@
-
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 //@Parcelize
-data class MovieDetails (
+data class MovieDetails(
         @SerializedName("Title") val title: String,
         @SerializedName("Year") val year: String,
         @SerializedName(" Rated") val rated: String,

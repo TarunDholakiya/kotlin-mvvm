@@ -1,7 +1,8 @@
-package com.tarun.samplekotlindemo1
+package com.tarun.samplekotlindemo1.view.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.tarun.samplekotlindemo1.R
 import com.tarun.samplekotlindemo1.rest.ApiClient.Companion.getMovieService
 import com.tarun.samplekotlindemo1.rest.ConnectivityInterceptor
 import com.tarun.samplekotlindemo1.utilities.movie
