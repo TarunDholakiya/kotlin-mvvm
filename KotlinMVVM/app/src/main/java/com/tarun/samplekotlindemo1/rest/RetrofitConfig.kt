@@ -1,6 +1,5 @@
 package com.tarun.samplekotlindemo1.rest
 
-import android.content.Context
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -15,7 +14,7 @@ class RetrofitConfig {
         lateinit var retrofit: Retrofit
         lateinit var okHttpClient: OkHttpClient
 
-        fun getRetrofitInstance(activity: Context): Retrofit {
+        fun getRetrofitInstance(): Retrofit {
             val loggingInterceptor = HttpLoggingInterceptor()
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
 
@@ -24,7 +23,7 @@ class RetrofitConfig {
                     .readTimeout(300, TimeUnit.SECONDS)
                     .writeTimeout(300, TimeUnit.SECONDS)
                     .addInterceptor(loggingInterceptor )
-                    .addInterceptor(ConnectivityInterceptor(activity))
+                    .addInterceptor(ConnectivityInterceptor())
                     .build()
 
             val gson = GsonBuilder()

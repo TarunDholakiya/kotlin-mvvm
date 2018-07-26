@@ -2,11 +2,12 @@ package com.tarun.samplekotlindemo1.utilities
 
 import android.content.Context
 import android.net.ConnectivityManager
+import com.tarun.samplekotlindemo1.MyApplication
 
-fun isOnline(activity: Context): Boolean {
+fun isOnline(): Boolean {
     var isConnected = false
     try {
-        val cm = activity.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val cm = MyApplication.instance.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         isConnected = cm.activeNetworkInfo != null
                 && cm.activeNetworkInfo.isAvailable
                 && cm.activeNetworkInfo.isConnected
